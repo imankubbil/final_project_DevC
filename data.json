@@ -1,0 +1,103 @@
+{
+            "menu": [
+	            {
+	                "navigation_bar": "Home",
+                    "body" : "",
+	                "gambar_carousel": [
+	                "kaos.jpg",
+	                "kaosputih.jpg",
+	                "kaosshirohige.jpg"
+	                ]
+	            },
+	            {
+	            	"navigation_bar": "About Us",
+	            	"body": "About Us",
+	            	"gambar": [
+	            		
+	            	]
+	            },
+	            {
+	            	"navigation_bar": "Combed 30S",
+	            	"body": "Rp 45.000",
+	            	"gambar": [
+	            		"COMBED30S_ABU-MISTY-MUDA.png",
+                        "COMBED30S_BIRU-NAVY.png", 
+                        "COMBED30S_HITAM.png", 
+                        "COMBED30S_KUNING-BABY.png", 
+                        "COMBED30S_MERAH-SCARLET.png", 
+                        "COMBED30S_PUTIH.png", 
+                        "COMBED30S_TOSCA.png"
+	            	]
+	            },
+                {
+                    "navigation_bar": "Combed 20S",
+                    "body": "Rp 50.000",
+                    "gambar": [
+                        "COMBED-20S-ABU-MISTY.png", 
+                        "COMBED-20S-ABU-MUDA.png", 
+                        "COMBED-20S-ABU-TUA.png", 
+                        "COMBED-20S-BIRU-BENHUR.png", 
+                        "COMBED-20S-BIRU-MUDApng.png", 
+                        "COMBED-20S-BIRU-NAVY.png", 
+                        "COMBED-20S-COKLAT-TUA.png", 
+                        "COMBED-20S-CREAM.png", 
+                        "COMBED-20S-HIJAU-ARMY.png", 
+                        "COMBED-20S-HIJAU-FUJI.png", 
+                        "COMBED-20S-HIJAU-STABILO.png", 
+                        "COMBED-20S-HITAM.png", 
+                        "COMBED-20S-KUNING-EMAS.png", 
+                        "COMBED-20S-KUNING-KENARI.png", 
+                        "COMBED-20S-MAROON.png", 
+                        "COMBED-20S-MERAH.png", 
+                        "COMBED-20S-ORANGE.png", 
+                        "COMBED-20S-PINK.png", 
+                        "COMBED-20S-PUTIH.png", 
+                        "COMBED-20S-TURKISH-MUDA.png", 
+                        "COMBED-20S-TURKISH-TUA.png", 
+                        "COMBED-20S-UNGU-MUDA.png", 
+                        "COMBED-20S-UNGU-TUA.png"
+                    ]
+                },
+                {
+                    "navigation_bar": "Polo Shirt",
+                    "body": "Rp 75.000",
+                    "gambar": [
+                        "POLOSHIRT_ABU-MISTY.png", 
+                        "POLOSHIRT_ABU-mudapng.png", 
+                        "POLOSHIRT_ABU-TUA.png", 
+                        "POLOSHIRT_BIRU-NAVY.png", 
+                        "POLOSHIRT_HIJAU-ARMY.png", 
+                        "POLOSHIRT_HIJAU-FUJI.png", 
+                        "POLOSHIRT_HIJAU-STABILO.png", 
+                        "POLOSHIRT_HITAM.png", 
+                        "POLOSHIRT_KUNING-EMAS.png", 
+                        "POLOSHIRT_KUNING-KENARI.png", 
+                        "POLOSHIRT_MERAH-CABEpng.png",
+                        "POLOSHIRT_MERAH-FANTA.png", 
+                        "POLOSHIRT_ORANGE.png", 
+                        "POLOSHIRT_PINK.png", 
+                        "POLOSHIRT_TOSKA-SEDANG.png", 
+                        "POLOSHIRT_TOSKA-TUA.png", 
+                        "POLOSHIRT_TURKIS-MUDA.png", 
+                        "POLOSHIRT_TURKIS-TUA.png", 
+                        "POLOSHIRT_UNGU-MUDA.png"
+                    ]
+                },
+                {
+                    "navigation_bar": "One Piece",
+                    "body": "Rp 85.000",
+                    "gambar": [
+                        "ANCHOR_DONGKER.png",
+                        "AOKIJI-KUZAN_HITAM.png",
+                        "CRIMIN_KUNING-EMAS.png",
+                        "IAMGOING_MAROON.png",
+                        "LAWCUTE_PUTIH.png",
+                        "LUFFYKIDS_MAROON.png",
+                        "OKASHICHIBUKAI_KUNING-EMAS.png",
+                        "PIRATEHUNTER_HITAM.png",
+                        "PIRATEKING_DONGKER.png",
+                        "SMILELUFFY_ABU-MISTY.png"
+                    ]
+                }
+        	]
+        }

@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Exercise 4</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<a class="navbar-brand" href="exersice4.html">
+			<img src="images/w.png" alt="logo.png" height="30">
+			<strong>WEES</strong>
+		</a>
+		<div class="collapse navbar-collapse" id="navbarSupportedContent">
+			<ul class="navbar-nav mr-auto" id="navbar">
+			</ul>
+			<ul class="my-2 my-sm-0">
+				<button type="button" class="btn btn-outline-light" id="login">LOGIN</button>
+				<button type="button" class="btn btn-outline-light" id="register">REGISTER</button>
+			</ul>
+		</div>
+	</nav>
+	<div class="pt-2" id="body_home">
+
+	</div>
+	<div class="pt-5" id="body_about" style="display: none;">
+		
+	</div>
+	<div class="pt-5" id="body_combed_30S" style="display: none;">
+		
+	</div>
+	<div class="pt-5" id="body_combed_20S" style="display: none;">
+		
+	</div>
+	<div class="pt-5" id="body_polo_shirt" style="display: none;">
+		
+	</div>
+	<div class="pt-5" id="body_one_piece" style="display: none;">
+		
+	</div>
+	<div class="pt-2" id="form_register" style="display: none;">
+		<div class="pt-5">
+			<div class="container pt-3">
+				<div class="container-fluid">
+					<div class="card">
+						<div class="card-title">
+							<h5 class="text-center">Register</h5>
+						</div>
+						<div class="card-body">
+							<form>
+								<div class="form-row">
+									<div class="form-group col-md-12">
+										<label for="input_name">NAME</label>
+										<input type="text" class="form-control" id="input_name" placeholder="YOUR NAME">
+									</div>
+									<div class="form-group col-md-12">
+										<label for="inputPassword4">Password</label>
+										<input type="password" class="form-control" id="inputPassword4" placeholder="YOUR PASSWORD">
+									</div>
+									<div class="form-group col-md-12">
+										<label for="input_address">Address</label>
+										<input type="text" class="form-control" id="input_addres" placeholder="YOUR ADDRESS">
+									</div>
+									<div class="form-group col-md-12">
+										<label for="input_no_handphone">No Handphone</label>
+										<input type="text" class="form-control" id="input_no_handphone" placeholder="YOUR NO HANDPHONE">
+									</div>
+								</div>
+								<button type="submit" class="btn btn-primary">REGISTER</button>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="modal_login" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-center">Login</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<div class="modal-body">
+					<form >
+						<div class="form-group">
+							<input type="email" class="form-control" id="email" placeholder="Email address">
+						</div>
+						<div class="form-group">
+							<input type="password" class="form-control" id="password" placeholder="Password">
+						</div>
+						<button type="submit" id="submitlogin" class="btn btn-primary btn-block">Sign in</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="modal fade" id="login_gagal" tabindex="-1" role="dialog">
+		<div class="modal-dialog modal-sm" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title text-center">Anda Gagal Login</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+			</div>
+		</div>
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+		<!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script> -->
+		<script>
+			$.getJSON('data.json', function(data) {
+				var navbar = data.menu;
+					carousel = data.menu[0].gambar_carousel.length;
+					data_carousel = "";
+
+					for (var i = 0; i < carousel; i++) {
+						if (data.menu[0].gambar_carousel[i] !== data.menu[0].gambar_carousel[0]) {
+							var aktif = "";
+						} else {
+							var aktif = "active";
+						}
+						data_carousel += 	`<div class="carousel-item `+aktif+`">
+												<img src="carousel/`+data.menu[0].gambar_carousel[i]+`" class="d-block w-100" alt="...">
+											</div>`;
+					}
+
+				$.each(navbar, function(i, data) {
+					var data_navbar = data.navigation_bar;
+						upper 		= data_navbar.toLocaleUpperCase();
+					if (data_navbar == "Home") {
+						aktif = "active";
+						var home = $('#body_home');
+						home.html(`<div id="carouselExampleControls" class="carousel slide pt-5" data-ride="carousel">
+							<div class="carousel-inner">`+data_carousel+`
+							</div>
+							<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+							<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+							<span class="sr-only">Previous</span>
+							</a>
+							<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+							<span class="carousel-control-next-icon" aria-hidden="true"></span>
+							<span class="sr-only">Next</span>
+							</a>
+							</div>`);
+					} else {
+						aktif = "";
+					}
+					
+					$('#navbar').append(`<a class="nav-link `+aktif+`" id="`+data_navbar+`">`+upper+`</a>`);
+
+					if (data_navbar === "About Us") {
+						var about = $('#body_about');
+						about.html(`<div class="jumbotron jumbotron-fluid">
+										<div class="container">
+											<h1 class="display-4 text-center" id="title_about">`+data_navbar+`</h1>
+										</div>
+									</div>
+									<div class="container-fluid">
+										<div class="row justify-content-center">
+											<div class="card col-sm-6">
+											  <div class="card-body">
+											    <h5 class="card-title text-center">OUR HISTORY</h5>
+											    <p class="card-text">
+											    	WEES dibentuk awalnya dari 4 orang di pinggiran kota, tepatnya di kabupaten babelan.
+											    	WEES adalah sebuah tempat yang dimana menawarkan sebuah jasa sablon dan penjahitan kaos polos, disamping itu wees pun menyediakan beberapa stock kaos yang memiliki desain desain menarik.
+												</p>
+												<p class="card-text">
+													Kami melayani pengiriman ke seluruh kota di Indonesia melalui pemesanan online. Logo WEES di ambil dari sebuah tempat yang sering disebut dalam bahasa inggris yaitu Workshop namun kami mengucapnya dengan wees.
+											  </div>
+											</div>
+										</div>
+									</div>`);
+					};
+
+					if (data_navbar === "Combed 30S") {
+						var gambar_length = data.gambar.length;
+							data_gambar = "";
+							for (var i = 0; i < gambar_length; i++) {
+								// data_gambar += data.gambar[i];
+								data_gambar += `<div class="col-sm-4 pt-4">
+													  <div class="card">
+													    <img src="images/Combed_30S/`+data.gambar[i]+`" class="card-img-top" alt="`+i+`">
+													    <div class="card-body">
+													      <h5 class="card-title">`+data.body+`</h5>
+													      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+													      <button type="button" class="btn btn-warning">ORDER NOW</button>
+													    </div>
+													  </div>
+													</div>`;
+							}
+						var combed_30S = $('#body_combed_30S');
+							combed_30S.html(`
+											<div class="container pt-4">
+												<div class="card-group row">
+													`+data_gambar+`													
+												</div>
+											</div>
+											`);
+					}
+
+					if (data_navbar === "Combed 20S") {
+						var gambar_length = data.gambar.length;
+							data_gambar = "";
+
+							for (var i = 0; i < gambar_length; i++) {
+								data_gambar += `<div class="col-sm-4 pt-4">
+													  <div class="card">
+													    <img src="images/Combed_20S/`+data.gambar[i]+`" class="card-img-top" alt="`+i+`">
+													    <div class="card-body">
+													      <h5 class="card-title">`+data.body+`</h5>
+													      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+													      <button type="button" class="btn btn-warning">ORDER NOW</button>
+													    </div>
+													  </div>
+													</div>`;
+							}
+
+							var combed_20S = $('#body_combed_20S');
+							combed_20S.html(`
+											<div class="container pt-4">
+												<div class="card-group row">
+													`+data_gambar+`													
+												</div>
+											</div>
+											`);
+					}
+
+					if (data_navbar === "Polo Shirt") {
+						var gambar_length = data.gambar.length;
+							data_gambar = "";
+
+							for (var i = 0; i < gambar_length; i++) {
+								data_gambar += `<div class="col-sm-4 pt-4">
+													  <div class="card">
+													    <img src="images/Polo_Shirt/`+data.gambar[i]+`" class="card-img-top" alt="`+i+`">
+													    <div class="card-body">
+													      <h5 class="card-title">`+data.body+`</h5>
+													      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+													      <button type="button" class="btn btn-warning">ORDER NOW</button>
+													    </div>
+													  </div>
+													</div>`;
+							}
+
+							var polo_shirt = $('#body_polo_shirt');
+							polo_shirt.html(`
+											<div class="container pt-4">
+												<div class="card-group row">
+													`+data_gambar+`													
+												</div>
+											</div>
+											`);
+					}
+
+					if (data_navbar === "One Piece") {
+						var gambar_length = data.gambar.length;
+							data_gambar = "";
+
+							for (var i = 0; i < gambar_length; i++) {
+								data_gambar += `<div class="col-sm-4 pt-4">
+													  <div class="card">
+													    <img src="images/One_Piece/`+data.gambar[i]+`" class="card-img-top" alt="`+i+`">
+													    <div class="card-body">
+													      <h5 class="card-title">`+data.body+`</h5>
+													      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+													      <button type="button" class="btn btn-warning">ORDER NOW</button>
+													    </div>
+													  </div>
+													</div>`;
+							}
+
+							var one_piece = $('#body_one_piece');
+							one_piece.html(`
+											<div class="container pt-4">
+												<div class="card-group row">
+													`+data_gambar+`													
+												</div>
+											</div>
+											`);
+					}
+				});
+				$('.nav-link').on('click', function() {
+					$('.nav-link').removeClass('active');
+					var class_active = $(this).addClass('active');
+					menu = $(this).html();
+					if (menu !== "HOME") { //about, 30,20,polo,one
+						$('#body_home').hide();
+						if (menu === "ABOUT US") {
+							$('#body_about').show();
+							$('#body_combed_30S').hide();
+							$('#body_combed_20S').hide();
+							$('#body_polo_shirt').hide();
+							$('#body_one_piece').hide();
+							$("#form_register").hide();
+						} else if(menu === "COMBED 30S") {
+							$('#body_combed_30S').show();
+							$('#body_about').hide();
+							$('#body_combed_20S').hide();
+							$('#body_polo_shirt').hide();
+							$('#body_one_piece').hide();
+							$("#form_register").hide();
+						} else if (menu === "COMBED 20S") {
+							$('#body_combed_20S').show();
+							$('#body_about').hide();
+							$('#body_combed_30S').hide();
+							$('#body_polo_shirt').hide();
+							$('#body_one_piece').hide();
+							$("#form_register").hide();
+						} else if (menu === "POLO SHIRT") {
+							$('#body_polo_shirt').show();
+							$('#body_about').hide();
+							$('#body_combed_30S').hide();
+							$('#body_combed_20S').hide();
+							$('#body_one_piece').hide();
+							$("#form_register").hide();
+						} else if (menu === "ONE PIECE") {
+							$('#body_one_piece').show();
+							$('#body_about').hide();
+							$('#body_combed_30S').hide();
+							$('#body_combed_20S').hide();
+							$('#body_polo_shirt').hide();
+							$("#form_register").hide();
+						}
+					} else {
+						$('#body_home').show();
+						$('#body_about').hide();
+						$('#body_combed_30S').hide();
+						$('#body_combed_20S').hide();
+						$('#body_polo_shirt').hide();
+						$('#body_one_piece').hide();
+						$("#form_register").hide();
+					}
+				})
+
+			})
+			var email 		= "admin@gmail.com";
+			password 		= "admin";
+
+			$('#login').on('click', function() {
+				$("#modal_login").modal('show');
+			});
+
+			$('#register').on('click', function() {
+				$('.nav-link').removeClass('active');
+				$('#body_home').hide();
+				$('#body_about').hide();
+				$('#body_combed_30S').hide();
+				$('#body_combed_20S').hide();
+				$('#body_polo_shirt').hide();
+				$('#body_one_piece').hide();
+				$("#form_register").show();
+			});
+
+	  	$('#submitlogin').on('click', function() {
+	  		var value_email 		= $('#email').val();
+	  			value_password 		= $('#password').val();
+
+	  		if (value_email == email && value_password == password) {
+				window.location = "halaman_administrasi.html";
+				return false;
+	  		} else {
+	  			$("#modallogin").modal('hide');
+	  			$("#logingagal").modal('show');
+	  		}
+	  	});
+	  </script>
+</body>
+</html>
