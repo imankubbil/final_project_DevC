@@ -1,0 +1,7 @@
+Maaf kak sebelumnya, berhubung saya menggunakan data json
+yang di parsing ke jquery jadi script tersebut membutuhkan webserver untuk pengujuannya.
+
+sebelumnya saya ingin sript tersebut dijadikan online lewat github 
+berhubung saya kurang pandai menggunakan github, jadi gagal deh.
+
+terima kasih.
